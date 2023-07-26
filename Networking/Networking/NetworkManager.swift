@@ -9,4 +9,12 @@ import Foundation
 
 class NetworkManager {
     
+    enum requestType: String {
+        case GET
+        case POST
+        case PUT
+        case DELITE
+    }
+    
+    var url = "https://jsonplaceholder.typicode.com/"
 }
