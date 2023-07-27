@@ -20,7 +20,7 @@ class NetworkManager {
     
     func getAllPosts( complition: @escaping ([Posts]) -> Void) {
         
-        guard var urlString = URL(string: url + "posts") else { return }
+        guard let urlString = URL(string: url + "posts") else { return }
         
         URLSession.shared.dataTask(with: urlString) { data, response, error in
             if error != nil {
@@ -32,6 +32,6 @@ class NetworkManager {
                 
                 complition(post ?? [])
             }
-        }
+        }.resume()
     }
 }

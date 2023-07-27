@@ -15,10 +15,38 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gSq-Gy-ZJY">
+                                <rect key="frame" x="112" y="425.33333333333331" width="169" height="70.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tap to download posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN0-9a-4UB">
+                                        <rect key="frame" x="0.0" y="0.0" width="169" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yno-6a-Dfg">
+                                        <rect key="frame" x="34.666666666666657" y="36.333333333333371" width="100" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Download"/>
+                                        <connections>
+                                            <action selector="downloadPostsDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hqn-nE-NSv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gSq-Gy-ZJY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Z21-07-7xR"/>
+                            <constraint firstItem="gSq-Gy-ZJY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tvD-B3-mVd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2Fh-Ma-D3K"/>
+                    <connections>
+                        <outlet property="statuResponseLabel" destination="TN0-9a-4UB" id="iOW-9R-tQk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

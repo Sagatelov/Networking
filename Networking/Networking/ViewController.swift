@@ -8,12 +8,26 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var statuResponseLabel: UILabel!
+    
+    var usersPosts: [Posts] = []
+    var network = NetworkManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func downloadPostsDidTap(_ sender: UIButton) {
+        network.getAllPosts { arrayPosts in
+            
+            self.usersPosts = arrayPosts
+            
+            DispatchQueue.main.async {
+                self.statuResponseLabel.text = "Download complition"
+            }
+        }
+    }
 }
 
