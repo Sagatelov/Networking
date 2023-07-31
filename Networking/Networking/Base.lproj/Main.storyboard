@@ -50,7 +50,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1443.5114503816794" y="-9.1549295774647899"/>
+            <point key="canvasLocation" x="1288" y="-9"/>
+        </scene>
+        <!--View Controller All Posts-->
+        <scene sceneID="411-l7-nlo">
+            <objects>
+                <viewController storyboardIdentifier="ViewControllerAllPostsID" modalPresentationStyle="fullScreen" id="pGe-5z-t69" customClass="ViewControllerAllPosts" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LdD-vs-avM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gIH-zm-Eji">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="b1R-1h-cuh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gIH-zm-Eji" firstAttribute="leading" secondItem="b1R-1h-cuh" secondAttribute="leading" id="QpP-5W-qgW"/>
+                            <constraint firstItem="gIH-zm-Eji" firstAttribute="top" secondItem="b1R-1h-cuh" secondAttribute="top" id="bl6-mk-d1s"/>
+                            <constraint firstItem="b1R-1h-cuh" firstAttribute="trailing" secondItem="gIH-zm-Eji" secondAttribute="trailing" id="m1l-UO-5n4"/>
+                            <constraint firstItem="gIH-zm-Eji" firstAttribute="bottom" secondItem="b1R-1h-cuh" secondAttribute="bottom" id="xbw-CL-Dyr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sF2-X4-cO9"/>
+                    <connections>
+                        <outlet property="allPostsTableView" destination="gIH-zm-Eji" id="3mU-d1-Jby"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pb5-Eb-GEy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2030" y="-9"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9Po-VQ-pv4">
@@ -62,8 +93,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ab6-R3-kIr">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QHC-Bg-f8L"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yv0-aU-PM1"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slO-Ia-gLn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
