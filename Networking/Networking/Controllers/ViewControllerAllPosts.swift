@@ -22,8 +22,9 @@ class ViewControllerAllPosts: UIViewController {
     var usersPostsForTableArray: [Posts] = [] {
         didSet {
             print(usersPostsForTableArray)
-            
-        //allPostsTableView.reloadData()
+            if oldValue.isEmpty != true {
+                allPostsTableView.reloadData()
+            }
         }
     }
     

@@ -30,15 +30,16 @@ class ViewController: UIViewController {
             
             
             DispatchQueue.main.async {
+                
                 self.allPostsUserArray = arrayPosts
                 self.statuResponseLabel.text = "Download complition"
+                
+                let allPostsBarButtonItem = UIBarButtonItem(title: "see posts", style: .plain, target: self, action: #selector(self.screenWithPostButton))
+                
+                self.navigationItem.rightBarButtonItem = allPostsBarButtonItem
+                
             }
         }
-        
-        let allPostsBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(screenWithPostButton))
-        
-        navigationItem.rightBarButtonItem = allPostsBarButtonItem
-        
     }
     
     @objc func screenWithPostButton() {

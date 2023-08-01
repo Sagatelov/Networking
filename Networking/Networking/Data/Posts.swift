@@ -13,3 +13,4 @@ class Posts: Codable {
     var title: String
     var body: String
 }
+
