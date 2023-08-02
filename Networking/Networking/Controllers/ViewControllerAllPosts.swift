@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewControllerAllPosts: UIViewController {
-
+    
     @IBOutlet weak var allPostsTableView: UITableView! {
         didSet {
             allPostsTableView.delegate = self
@@ -31,11 +31,22 @@ class ViewControllerAllPosts: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("load")
+        
     }
     
+    func addNewPost() {
+        var addPostBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(performAddPostBarButtonItem))
+        navigationItem.rightBarButtonItem = addPostBarButton
+    }
     
+    @objc func performAddPostBarButtonItem() {
+        let storboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storboard.instantiateViewController(withIdentifier: "ViewControllerAddNewPostScreenID")
+        show(vc, sender: self)
+    }
 }
+
+
 
 extension ViewControllerAllPosts: UITableViewDelegate, UITableViewDataSource {
     

@@ -12,5 +12,12 @@ class Posts: Codable {
     var id: Int
     var title: String
     var body: String
+    
+    init(userId: Int, title: String, body: String ) {
+        self.userId = userId
+        self.title = title
+        self.body = body
+        self.id = 0
+        
+    }
 }
-

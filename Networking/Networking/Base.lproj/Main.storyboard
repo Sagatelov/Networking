@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Download posts-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
@@ -43,7 +43,7 @@
                             <constraint firstItem="gSq-Gy-ZJY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tvD-B3-mVd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2Fh-Ma-D3K"/>
+                    <navigationItem key="navigationItem" title="Download posts" id="2Fh-Ma-D3K"/>
                     <connections>
                         <outlet property="statuResponseLabel" destination="TN0-9a-4UB" id="iOW-9R-tQk"/>
                     </connections>
@@ -68,8 +68,12 @@
                         <viewLayoutGuide key="safeArea" id="b1R-1h-cuh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="gIH-zm-Eji" firstAttribute="leading" secondItem="b1R-1h-cuh" secondAttribute="leading" id="49Z-5Z-1jY"/>
+                            <constraint firstItem="gIH-zm-Eji" firstAttribute="bottom" secondItem="b1R-1h-cuh" secondAttribute="bottom" id="Pcw-MQ-WON"/>
                             <constraint firstItem="gIH-zm-Eji" firstAttribute="leading" secondItem="b1R-1h-cuh" secondAttribute="leading" id="QpP-5W-qgW"/>
+                            <constraint firstItem="gIH-zm-Eji" firstAttribute="top" secondItem="b1R-1h-cuh" secondAttribute="top" id="YQ9-hE-oaO"/>
                             <constraint firstItem="gIH-zm-Eji" firstAttribute="top" secondItem="b1R-1h-cuh" secondAttribute="top" id="bl6-mk-d1s"/>
+                            <constraint firstItem="gIH-zm-Eji" firstAttribute="trailing" secondItem="b1R-1h-cuh" secondAttribute="trailing" id="hlc-mE-H5Y"/>
                             <constraint firstItem="b1R-1h-cuh" firstAttribute="trailing" secondItem="gIH-zm-Eji" secondAttribute="trailing" id="m1l-UO-5n4"/>
                             <constraint firstItem="gIH-zm-Eji" firstAttribute="bottom" secondItem="b1R-1h-cuh" secondAttribute="bottom" id="xbw-CL-Dyr"/>
                         </constraints>
@@ -82,6 +86,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pb5-Eb-GEy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2030" y="-9"/>
+        </scene>
+        <!--View Controller Add New Post Screen-->
+        <scene sceneID="W5Y-7D-oPe">
+            <objects>
+                <viewController storyboardIdentifier="ViewControllerAddNewPostScreenID" id="9Y3-Oi-Dzx" customClass="ViewControllerAddNewPostScreen" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FxQ-n9-qoK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0E6-8p-kKK">
+                                <rect key="frame" x="30" y="308" width="333" height="98"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Текст заголовка" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bel-8v-xH9">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wbh-kE-Lql">
+                                        <rect key="frame" x="0.0" y="64" width="333" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZN-4k-Sd6">
+                                <rect key="frame" x="30" y="456.00000000000006" width="333" height="161.66666666666669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="161" id="FZ6-uo-mEN"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Напишите пост" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mff-f5-Cvm">
+                                <rect key="frame" x="96" y="221" width="201" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="77O-MI-qOm"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="9Qe-5K-dv4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DevanagariSangamMN" family="Devanagari Sangam MN" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uoj-WH-mav">
+                                <rect key="frame" x="121.66666666666669" y="673.66666666666663" width="150" height="34.333333333333371"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34.333333333333371" id="H3N-4u-j5q"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="vjd-du-dPQ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Отправить пост"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="b8A-HK-hFW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0E6-8p-kKK" firstAttribute="top" secondItem="Mff-f5-Cvm" secondAttribute="bottom" constant="66" id="169-tg-rZd"/>
+                            <constraint firstItem="Mff-f5-Cvm" firstAttribute="top" secondItem="b8A-HK-hFW" secondAttribute="top" constant="162" id="91r-z9-G5y"/>
+                            <constraint firstItem="b8A-HK-hFW" firstAttribute="bottom" secondItem="Uoj-WH-mav" secondAttribute="bottom" constant="110" id="GD3-91-hsA"/>
+                            <constraint firstItem="nZN-4k-Sd6" firstAttribute="leading" secondItem="0E6-8p-kKK" secondAttribute="leading" id="IYE-c3-tQf"/>
+                            <constraint firstItem="Uoj-WH-mav" firstAttribute="centerX" secondItem="b8A-HK-hFW" secondAttribute="centerX" id="TQM-EK-cLa"/>
+                            <constraint firstItem="Uoj-WH-mav" firstAttribute="top" secondItem="nZN-4k-Sd6" secondAttribute="bottom" constant="56" id="Tga-7a-r5n"/>
+                            <constraint firstItem="nZN-4k-Sd6" firstAttribute="centerX" secondItem="b8A-HK-hFW" secondAttribute="centerX" id="coI-jH-2eQ"/>
+                            <constraint firstItem="0E6-8p-kKK" firstAttribute="centerX" secondItem="b8A-HK-hFW" secondAttribute="centerX" id="dSl-0l-fwT"/>
+                            <constraint firstItem="Mff-f5-Cvm" firstAttribute="centerX" secondItem="b8A-HK-hFW" secondAttribute="centerX" id="elL-TN-38I"/>
+                            <constraint firstItem="0E6-8p-kKK" firstAttribute="leading" secondItem="b8A-HK-hFW" secondAttribute="leading" constant="30" id="feW-rC-ZeC"/>
+                            <constraint firstItem="nZN-4k-Sd6" firstAttribute="top" secondItem="0E6-8p-kKK" secondAttribute="bottom" constant="50" id="ghm-Ba-Rdy"/>
+                            <constraint firstItem="nZN-4k-Sd6" firstAttribute="trailing" secondItem="0E6-8p-kKK" secondAttribute="trailing" id="nXi-bI-sk2"/>
+                            <constraint firstItem="b8A-HK-hFW" firstAttribute="trailing" secondItem="0E6-8p-kKK" secondAttribute="trailing" constant="30" id="plZ-5O-UHW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="DescriptionTextView" destination="nZN-4k-Sd6" id="Bf0-gB-eUz"/>
+                        <outlet property="idTextFild" destination="Wbh-kE-Lql" id="ifT-04-VU7"/>
+                        <outlet property="titleTextFild" destination="bel-8v-xH9" id="tia-Ri-V3V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yNu-IV-seR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2791.6030534351144" y="-9.1549295774647899"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9Po-VQ-pv4">
@@ -106,6 +191,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
